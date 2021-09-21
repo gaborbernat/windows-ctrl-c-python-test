@@ -16,7 +16,7 @@ def exit_gracefully(signum, frame):
     print(f"ROOT {count} got {signum!r}-{Signals(signum).name}")
     if count < 3:
         print(f"ROOT {count} send CTRL_C_EVENT")
-        thread.process.send_signal(SIGTERM)
+        thread.process.send_signal(CTRL_C_EVENT)
     else:
         print(f"ROOT {count} send terminate")
         thread.process.kill()
